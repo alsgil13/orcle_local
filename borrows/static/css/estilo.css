@@ -1,0 +1,315 @@
+
+button{
+    border-radius: 2px;
+    min-width: 200px;
+    min-height: 50px;
+    margin: -2px;
+    padding: 0;
+    font-weight: 600;
+
+}
+
+header{
+    margin-bottom: 1em;
+}
+
+.main{
+    border: solid;
+    position: absolute;
+    display: block;
+    background-color: #edf0f2;
+    width: 100%;
+    min-height: 100%;
+    height: auto;
+    padding-bottom: 10%;
+}
+
+.banner{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: block;
+    background-color: rgba(71, 112, 117, 0.918);
+    width: 100%;
+    height: 20%;
+    font-size: 900%;
+    color:#edf0f2;
+    text-align: center;
+    margin-bottom:0;
+}
+
+.banner p{
+    margin-bottom: 0;
+}
+
+.footer{
+
+    position:absolute;
+    bottom: 0;
+    display: block;
+    background-color: rgba(71, 112, 117, 0.918);
+    width: 100%;
+    height: 10%;
+    color:white;
+    text-align: center;
+    padding: 2%;
+    font-style: italic;
+}
+
+
+
+.profile-info{
+    /* border: solid; */
+    position: absolute;
+    width: 20%;
+    height: 70%;
+    text-align: center;
+    align-items: center;
+    
+}
+
+.happen{
+    margin-top: 1%;
+    position: absolute;
+    left: 38%;
+    float: right;
+    /* border: solid; */
+    width: 46%;
+    height: 70%;
+    text-align: center;
+}
+
+.evento{
+    margin-top: 1%;
+    height: 12%;
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    /* border-color:rgba(71, 112, 117, 0.918);
+    border-style: groove; */
+    border-radius: 13px;
+    color: rgba(71, 112, 117, 0.918);
+}
+
+.tinypic{
+    margin: 15px;
+    width: 8%;
+    height: 60%;
+    border-radius: 52%;
+    float: left;
+    vertical-align: middle;    
+}
+
+.eventotext{
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.eventoopt{
+    visibility: visible; 
+    background-color: white;
+    
+    float: right;
+    display: relative;
+    width: 30px;
+    height: 40%;
+    border-radius: 13px;
+    
+
+}
+
+.eventoopt:hover{
+    background-color: rgba(168, 252, 182, 0.514);
+    background-image: url("img/watching.png");
+    background-size: cover;
+    margin: 2px;
+    
+
+}
+
+
+.profilepic{
+    display:block;
+    margin: 5px;
+    width: 60%;
+    height: 30%;
+    border-radius: 52%;
+    margin: auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.textoprofile{
+    color: rgba(71, 112, 117, 0.918);
+    text-shadow: 1px 1px white;
+    padding: 1px;
+    margin:0;
+    margin-left: 5%;
+}
+.mybutton{
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    background: rgba(71, 112, 117, 0.918);
+    color: #edf0f2;
+    margin-top: 3px;
+    font-weight: 700;
+    text-shadow: 1px 1px #808f87;
+}
+
+.mybutton:hover{
+    color: #808f87;
+    text-shadow: 1px 1px rgba(157, 228, 238, 0.918);;
+}
+
+.disponivel{
+    color: #69d363;
+    font-weight: 700;
+    /* text-shadow: 1px 1px black; */
+}
+
+.indisponivel{
+    color: #d36363;
+    font-weight: 700;
+}
+
+.emprestado{
+    color: #d3ac63;
+    font-weight: 700;
+}
+
+
+.logo{
+    margin: 20px;
+    padding: 10px;
+}
+
+.calibradordediv{
+    border: solid;
+    border-color: black;
+    
+}
+
+ul{
+    list-style: none;
+}
+
+/*Estitlo dos títulos da seção*/
+.titulo_secao{
+    
+    font-size: 3em;
+    font-weight: 600;
+    /* color: rgba(71, 112, 117, 0.918);
+    text-shadow: 2px 2px 2px rgba(206,89,55,0). */
+
+    color: rgba(71, 112, 117, 0.918);
+    /* font-style: italic; */
+    /* background: #FFFFFF; */
+    /* text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC; */
+    font-family: "Times New Roman", Times, serif;
+
+    letter-spacing: 2.2px;
+    word-spacing: 5px;
+    font-style: italic;
+    font-variant: small-caps;
+    text-transform: none;
+}
+
+
+
+/*Estilo dos itens da lista de itens*/
+
+
+.item_pic{
+    margin: 15px;
+    width: 100px;
+    height: 100px;
+    /* border-radius: 52%; */
+    float: left;
+    vertical-align: middle;    
+}
+
+.item_contenedor{
+    margin-top: 1%;
+    height: 12%;
+    max-height: 12%;
+    min-height: 12%;
+    width: 90%;
+    margin: auto;
+    /* background-color: #edf0f2; */
+    background-color: #e8f8ff;
+    /* border-color:rgba(71, 112, 117, 0.918);
+    border-style: groove; */
+    /* border-radius: 2px; */
+    color: rgba(71, 112, 117, 0.918);
+    
+}
+.item_contenedor a{
+    color: rgba(71, 112, 117, 0.918);
+    text-decoration: none;
+}
+
+.item_contenedor .nome_item{
+    margin-top: 2%;
+    font-weight: 700;
+}
+
+.item_contenedor .dono_item{
+    margin-top: -1%;
+    padding: 0;
+    
+}
+
+
+/*Estilos da página de detalhes do item*/
+
+.detalhes_item_pic{
+    margin: 15px;
+    width: 300px;
+    height: 300px;
+    /* border-radius: 52%; */
+    float: left;
+    vertical-align: middle;    
+}
+
+.detalhes_item_contenedor{
+    margin-top: 1%;
+    height: 12%;
+    max-height: 12%;
+    min-height: 12%;
+    width: 90%;
+    margin: auto;
+    background-color: white;
+    /* border-color:rgba(71, 112, 117, 0.918);
+    border-style: groove; */
+    /* border-radius: 2px; */
+    color: rgba(71, 112, 117, 0.918);
+    
+}
+
+.botaoestreito button{
+    width: 15px;
+}
+
+
+/* -------------------------------------------------------------------------------------- */
+/* Seção de CSS para arrumar as coisas geradas pelo django */
+/* Barra de paginação */
+.pagination{
+    display: flex;
+    justify-content: center;
+    /* border: solid; */
+    
+}
+
+.seta-pag{
+    font-size: 2em;
+    font-weight: 900;
+}
+
+
+
+/*CSS dos Forumários gerados*/
+.help-block{
+    font-size: 10px;
+    padding-left: 1%;
+    font-style: italic;
+    
+}

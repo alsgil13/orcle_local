@@ -1,0 +1,1 @@
+web: gunicorn orcle_django.wsgi --log-file -

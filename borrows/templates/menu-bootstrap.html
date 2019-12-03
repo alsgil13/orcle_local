@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Brand (ancora para home) -->
+    <a class="navbar-brand" href="{% url 'index' %}">&#216!</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Menu  -->
+    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+        <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Buscar Item</a>
+        </li> -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Meu Orcle
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/borrows/meuperfil">Meu Perfil</a>
+                <a class="dropdown-item" href="/borrows/meusitens">Meus Itens</a>
+                <a class="dropdown-item" href="/borrows/meusemprestimos">Meus Empréstimos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+            </div>
+        </li>
+        <li class="nav-item">
+             <a class="nav-link" href="/borrows/pessoas">Pessoas</a>
+        </li>
+        <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Itens
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/borrows/itens">Listar Itens</a>
+                    <a class="dropdown-item" href="/borrows/item/create">Criar Item</a>
+                    <a class="dropdown-item" href="/borrows/tipoitem">Listar Tipos de Item</a>
+                    <a class="dropdown-item" href="/borrows/tipoitem/create">Criar Tipo de Item</a>
+
+                </div>
+            </li>                        
+        <!-- <li class="nav-item">
+                <a class="nav-link" href="/borrows/itens">Itens</a>
+           </li>                
+           <li class="nav-item">
+                <a class="nav-link" href="/borrows/item/create">Criar Item</a>
+           </li> -->
+        <li class="nav-item">
+            <a class="nav-link" href="/borrows/sobre">Sobre</a>
+        </li>      
+
+        <!-- <li class="nav-item">
+            <a class="nav-link disabled" href="#">Desativado</a>
+        </li> -->
+        </ul>
+        <div class="float-right">
+            <p style="color:#edf0f2;"> <strong>Usuário:</strong> <i>{{ user.get_full_name }}</p></i>
+        </div>
+        <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar Item" aria-label="Buscar Item">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form> -->
+    </div>
+</nav>

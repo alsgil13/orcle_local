@@ -1,0 +1,8 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<a href="{% url 'auth_logout' %}?next=/path_to_the_page"> Logout</a>
+  <p>Logged out!</p>  
+  <a href="{% url 'index' %}">Click here to login again.</a>
+
+{% endblock %}

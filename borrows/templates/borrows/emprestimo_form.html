@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+{% load bootstrap%}
+{% block menu %}
+  {% include "menu-bootstrap.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container justify-content-center">
+  <div class="container" style="text-align:center;">
+      <h3>Pedir Emprestado</h3>
+  </div>
+  <div class="row justify-content-center">
+  <div class="col-4">
+    {{ form.non_field_errors }}
+    <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{ form|bootstrap }}
+ 
+    <input type="submit" value="Cadastrar" class='btn btn-success'>
+ 
+  </form>
+</div>
+</div>    
+</div>    
+{% endblock %}

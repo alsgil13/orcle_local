@@ -1,0 +1,80 @@
+{% extends "base_generic.html" %}
+
+{% block menu %}
+  {% include "menu-bootstrap.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div >
+        <div class="container">
+                <div class="profile-info">
+                    <img class="profilepic" src="{{ foto }}">
+                    <a href="/borrows/perfil/{{ id }}/update/"><input type="button" class="btn btn-primary btn-block" value="Editar Perfil"></a>
+                    <a href="/borrows/download"><input class='btn btn-secondary btn-block' value="Baixar Meus Itens"></a>
+                    <p class=" textoprofile text-left"><b>Nome:</b> {{ nome }}</p>
+                    <p class=" textoprofile text-left"><b>Data de Nascimento:</b> {{dt_nasc}}</p>
+                    <p class=" textoprofile text-left"><b>Cidade:</b> {{cidade}}/{{estado}}</p>
+                    <!-- <p class=" textoprofile text-left"><b>Membro desde:</b> 12/11/2019</p>
+                    <p class=" textoprofile text-left"><b>Itens para empréstimo:</b> 13 itens</p>
+                    <p class=" textoprofile text-left"><b>Emprestou:</b> 10 vezes</p>
+                    <p class=" textoprofile text-left"><b>Pegou emprestado:</b> 15 vezes</p>
+                    <p class=" textoprofile text-left"><b>Interessado em:</b> discos, livros, games, jogos de tabuleiro, jogos de cartas...</p>
+                    <p class=" textoprofile text-left"><b>Item que mais emprestou:</b> <a href="#"><span class="indisponivel">Pink Floyd - Dark Side of The Moon (Vinil)</span></a></p> -->
+                    
+                    <!-- <input type="button" class="mybutton" value="Meus Itens">
+                    <br>       
+                    <input type="button" class="mybutton" value="Itens de Amigos">                 -->
+                    
+                    <a href="/borrows/perfil/{{ id }}/delete/"><input type="button" class="btn btn-danger btn-block" value="Excluir Conta"></a>
+                    
+                </div>
+
+                <div class="happen">
+
+                    {% for i in itens %}
+                    <div class="evento">
+                            <a href=""><div class="eventoopt"></div></a>
+                            <img class="tinypic" src="{{ i.foto.url }}">
+                            <p class="eventotext"><span>{{ i }} </span> </p>
+                    </div>     
+                    {% endfor %}
+    
+                    <!-- <div class="evento">
+                      <a href="#"><div class="eventoopt" alt='Acompanhar Item'></div></a>
+                      <img class="tinypic" src="img/andre.jpg">
+                      <p class="eventotext"><span>André Gil </span> pegou o item <a href="#"><span class="indisponivel">Axé Bahia 1998 (CD)</span></a> emprestado de <span>Carlos Eduardo</span></p>
+                    </div>
+                    <div class="evento">
+                        <a href="#"><div class="eventoopt"></div></a>
+                        <img class="tinypic" src="img/carlao.jpg">
+                        <p class="eventotext"><span>Carlos Eduardo </span> devolveu o item <a href="#"><span class="disponivel">Alternativo 2000 (CD)</span></a> para <span>André Gil</span></p>
+                    </div>     
+                    <div class="evento">
+                          <a href="#"><div class="eventoopt"></div></a>
+                          <img class="tinypic" src="img/no-image-icon.png">
+                          <p class="eventotext"><span>Fabrício Henrique </span> devolveu o item <a href="#"><span class="disponivel">Livro de São Cipriano - Capa Preta Edição Especial com comentários do Toninho do Diabo (livro)</span></a> para <span>André Gil</span></p>
+                    </div>                                       
+                    <div class="evento">
+                          <a href="#"><div class="eventoopt"></div></a>
+                          <img class="tinypic" src="img/carlao.jpg">
+                          <p class="eventotext"><span>Carlos Eduardo </span> pegou o item <a href="#"><span class="indisponivel">O senhor dos Anéis - As Duas Torres (DVD)</span></a> emprestado de <span>Fabrício Henrique</span></p>
+                    </div>                      
+                    <div class="evento">
+                          <a href="#"><div class="eventoopt"></div></a>
+                          <img class="tinypic" src="img/andre.jpg">
+                          <p class="eventotext"><span>André Gil </span> pegou o item <a href="#"><span class="indisponivel">Músicas para beber e Brigar (CD)</span></a> emprestado de <span>Carlos Eduardo</span></p>
+                    </div>
+                    <div class="evento">
+                            <a href="#"><div class="eventoopt"></div></a>
+                            <img class="tinypic" src="img/carlao.jpg">
+                            <p class="eventotext"><span>Carlos Eduardo </span> devolveu o item <a href="#"><span class="disponivel">Os maiores sucessos de Latino (CD)</span></a> para <span>Fabrício Henrique</span></p>
+                    </div>      -->
+    
+                </div>
+            </div>
+
+
+</div>
+
+{% endblock %}

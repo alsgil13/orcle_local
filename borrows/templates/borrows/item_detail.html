@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+
+
+{% block menu %}
+  {% include "menu-bootstrap.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+
+
+        <img class="detalhes_item_pic" src="{{ item.foto.url }}">
+        <p> </p>
+        <p><strong>Tipo: {{ item.tipo.nome }} </strong></p>
+
+        <p><strong>Título: </strong>{{ item.nome }}</p>
+        <p><strong>Autor:</strong> {{ item.autor }}</p> 
+        <p><strong>Dono:</strong> {{ item.dono.first_name }} {{ item.dono.last_name }}</p> 
+    
+    </div>
+</div>
+<hr>
+<div class="row">
+
+        <div style="margin-left:20px;margin-top:20px">
+                <h4>Emprestimos já feitos</h4>
+            
+                {% for e in item.emprestimo_set.all %}
+                  <hr>
+                  <i><p class="">Emprestado para {{ e.pessoa.first_name }} {{ e.pessoa.last_name }} em {{ e.dtEmprestimo }}</p></i>
+                {% endfor %}
+              </div>
+</div>
+{% endblock %}

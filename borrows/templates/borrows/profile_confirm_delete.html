@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Deletar Tipo de Item</h1>
+
+<p>Você tem certeza que deseja deletar o sua conta?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" class='btn btn-danger' value="Sim.">
+</form>
+
+{% endblock %}

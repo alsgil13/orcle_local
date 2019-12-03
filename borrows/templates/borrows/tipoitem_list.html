@@ -1,0 +1,54 @@
+{% extends "base_generic.html" %}
+
+
+{% block menu %}
+  {% include "menu-bootstrap.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="row d-flex justify-content-center titulo_secao">
+    <div class=".col-md-6 .offset-md-3 text-center">
+        <span class="">Tipos de Itens Disponíveis</span>
+    </div>
+  </div>
+  {% if tipoitem_list %}
+  <ul>
+    {% for t in tipoitem_list %}
+      <li>
+          <div class="row item_contenedor">
+                <div class="col ">
+                        <p class="nome_item">   {{ t.nome }}</p>
+                        <p class=""> {{ t.descricao }} 
+                        </p>
+
+                </div>
+                <div class="col item_contenedor">
+                        <a href="/borrows/tipoitem/{{t.id}}/update"><button class="btn btn-warning btn-sm">Alterar</button></a>
+                        <a href="/borrows/tipoitem/{{t.id}}/delete"><button class="btn btn-danger btn-sm">Excluir</button></a>
+                </div>
+
+
+          </div>
+      </li>
+    {% endfor %}
+    
+  </ul>
+  {% else %}
+    <p>Nenhum item disponível.</p>
+  {% endif %}
+  {% if is_paginated %}
+  <div class="pagination">
+      <span class="page-links">
+          {% if page_obj.has_previous %}
+              <strong><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><span class="seta-pag">&#8592</span></a></strong>
+          {% endif %}
+          <span class="page-current">
+              <sup>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.</sup>
+          </span>
+          {% if page_obj.has_next %}
+        <strong><a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><span class="seta-pag">&#8594</span></a></strong>
+          {% endif %}
+      </span>
+  </div>
+  {% endif %}      
+{% endblock %}

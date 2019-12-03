@@ -1,0 +1,63 @@
+{% extends "base_generic.html" %}
+
+
+{% block menu %}
+  {% include "menu-bootstrap.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="row d-flex justify-content-center titulo_secao">
+    <div class=".col-md-6 .offset-md-3 text-center">
+        <span class="">Itens Disponíveis</span>
+    </div>
+    
+  </div>
+  {% if item_list %}
+  <ul>
+    {% for item in item_list %}
+      <li>
+          <div class="row item_contenedor">
+                <div class="col  item_contenedor">
+                    <img class="item_pic" src="{{ item.foto.url }}">
+                    <a href="/borrows/item/{{ item.id }}" >
+                        <p class="nome_item">   {{ item }}</p>
+                        <p class="dono_item"> 
+                            Pertence a:  {{ item.dono.first_name }} {{ item.dono.last_name }} <br>
+                            Status: <span class="{% if item.status == 'd' %}disponivel{% elif item.status == 'i' %}indisponivel{% else %}emprestado{% endif %}">{{ item.get_status_display }}</span>
+                        </p>
+
+                    </a>
+  
+                    <!-- <a href="/borrows/item/{{item.id}}/update"><button class="btn btn-warning">Alterar</button></a>
+                    <a href="/borrows/item/{{item.id}}/delete"><button class="btn btn-danger">Excluir</button></a> -->
+                </div>
+                {% if item.status == 'd' %}
+                <div class="col  item_contenedor">
+                  <!-- Adicionar id do item no GET -->
+                  <a href="/borrows/emprestimo/create?item={{item.id}} "><button class="btn btn-primary float-right">Pedir Emprestado</button></a>
+                </div>
+                {% endif %}
+          </div>
+      </li>
+    {% endfor %}
+    
+  </ul>
+  {% else %}
+    <p>Nenhum item disponível.</p>
+  {% endif %}
+  {% if is_paginated %}
+  <div class="pagination">
+      <span class="page-links">
+          {% if page_obj.has_previous %}
+              <strong><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><span class="seta-pag">&#8592</span></a></strong>
+          {% endif %}
+          <span class="page-current">
+              <sup>Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.</sup>
+          </span>
+          {% if page_obj.has_next %}
+        <strong><a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><span class="seta-pag">&#8594</span></a></strong>
+          {% endif %}
+      </span>
+  </div>
+  {% endif %}   
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+
+{% block menu %}
+  {% include "menu-bootstrap.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+
+
+        <img class="detalhes_item_pic" src="{{ profile.foto.url }}">
+        <p> </p>
+        <p><strong>Nome: </strong> {{ profile }} </p>
+
+        <p><strong>Localização: </strong>{{ profile.cidade }},{{ profile.estado }} - {{ profile.pais }}</p>
+        <p><strong>Data de Nascimento: </strong>{{ profile.dt_nasc }}</p>
+
+
+
+    
+    </div>
+</div>
+
+{% endblock %}

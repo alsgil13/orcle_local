@@ -1,0 +1,57 @@
+{% extends "base_generic.html" %}
+
+
+{% block menu %}
+  {% include "menu-bootstrap.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="row d-flex justify-content-center titulo_secao">
+    <div class=".col-md-6 .offset-md-3 text-center">
+        <span class="">Meus Itens Disponíveis</span>
+    </div>
+    
+  </div>
+  {% if item_list %}
+  <ul>
+    {% for item in item_list %}
+      <li>
+          <div class="row item_contenedor">
+                <div class="col  item_contenedor">
+                    <img class="item_pic" src="{{ item.foto.url }}">
+                        <p class="nome_item">   {{ item }}</p>
+                        <p class="dono_item"> 
+                            Pertence a:  {{ item.dono.first_name }} {{ item.dono.last_name }} <br>
+                            Status: <span class="{% if item.status == 'd' %}text-success{% elif item.status == 'i' %}text-danger{% else %}text-warning{% endif %}">{{ item.get_status_display }}</span>
+                        </p>
+                </div>
+                <div class="col item_contenedor">
+                        <a href="/borrows/item/{{item.id}}/update"><button class="btn btn-warning">Alterar</button></a>
+                        <a href="/borrows/item/{{item.id}}/delete"><button class="btn btn-danger">Excluir</button></a>
+
+                </div>
+
+          </div>
+      </li>
+    {% endfor %}
+    
+  </ul>
+  {% else %}
+    <p>Nenhum item disponível.</p>
+  {% endif %}
+  {% if is_paginated %}
+  <div class="pagination">
+      <span class="page-links">
+          {% if page_obj.has_previous %}
+              <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+          {% endif %}
+          <span class="page-current">
+              Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+          </span>
+          {% if page_obj.has_next %}
+              <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+          {% endif %}
+      </span>
+  </div>
+  {% endif %}       
+{% endblock %}
