@@ -295,15 +295,15 @@ def downloadALL(request):
     itens = Item.objects.all()
     itemlist = '{'
     for i in itens:
-        novoitem = '{'+str(i.id) + ":{\n"
-        novoitem += "\tnome :" + "'"+ str(i.nome) + "',\n"
-        novoitem += "\tautor :" + "'"+ str(i.autor) + "',\n"
-        novoitem += "\tdescricao :" + "'"+ str(i.descricao) + "',\n"
-        novoitem += "\tdono :" + "'"+ str(i.dono) + "',\n"
-        novoitem += "\ttipo :" + "'"+ str(i.tipo) + "',\n"
-        novoitem += "\tfoto :" + "'"+ str(i.foto.url) + "',\n"
-        novoitem += "\tstatus :" + "'"+ str(i.status) + "',\n"
-        novoitem += "\tdtCadastro :" + str(i.dtCadastro) + "\n\t},\n"
+        novoitem = str(i.id) + ":{\n"
+        novoitem += "\t'nome' :" + "'"+ str(i.nome) + "',\n"
+        novoitem += "\t'autor' :" + "'"+ str(i.autor) + "',\n"
+        novoitem += "\t'descricao' :" + "'"+ str(i.descricao) + "',\n"
+        novoitem += "\t'dono' :" + "'"+ str(i.dono) + "',\n"
+        novoitem += "\t'tipo' :" + "'"+ str(i.tipo) + "',\n"
+        novoitem += "\t'foto' :" + "'"+ str(i.foto.url) + "',\n"
+        novoitem += "\t'status' :" + "'"+ str(i.status) + "',\n"
+        novoitem += "\t'dtCadastro' :" + str(i.dtCadastro) + "\n\t},\n"
         itemlist += novoitem    
     itemlist = itemlist[0:-2]
     itemlist += '\n}'
@@ -313,13 +313,13 @@ def downloadALL(request):
     usuarios = Profile.objects.all()
     usuariolist = '{'
     for u in usuarios:
-        novousuario = '{'+str(u.user.id) + ":{\n"
-        novousuario += "\tdt_nasc :" + "'"+ str(u.dt_nasc) + "',\n"
-        novousuario += "\tcep :" + str(u.cep) + ",\n"
-        novousuario += "\tcidade :" + "'"+ str(u.cidade) + "',\n"
-        novousuario += "\testado :" + "'"+ str(u.estado) + "',\n"
-        novousuario += "\tpais :" + "'"+ str(u.pais) + "',\n"
-        novousuario += "\tfoto :" + "'"+ str(u.foto.url) + "\n\t},\n"
+        novousuario = str(u.user.id) + ":{\n"
+        novousuario += "\t'dt_nasc' :" + "'"+ str(u.dt_nasc) + "',\n"
+        novousuario += "\t'cep' :" + str(u.cep) + ",\n"
+        novousuario += "\t'cidade' :" + "'"+ str(u.cidade) + "',\n"
+        novousuario += "\t'estado' :" + "'"+ str(u.estado) + "',\n"
+        novousuario += "\t'pais' :" + "'"+ str(u.pais) + "',\n"
+        novousuario += "\t'foto' :" + "'"+ str(u.foto.url) + "\n\t},\n"
         usuariolist += novousuario    
     usuariolist = usuariolist[0:-2]
     usuariolist += '\n}'
@@ -329,9 +329,9 @@ def downloadALL(request):
     tipos = TipoItem.objects.all()
     tipolist = '{'
     for t in tipos:
-        novotipo = '{'+str(t.id) + ":{\n"
-        novotipo += "\tnome :" + "'"+ str(t.nome) + "',\n"
-        novotipo += "\tdescrcao :" + "'"+ str(t.descricao) + "\n\t},\n"
+        novotipo = str(t.id) + ":{\n"
+        novotipo += "\t'nome' :" + "'"+ str(t.nome) + "',\n"
+        novotipo += "\t'descricao' :" + "'"+ str(t.descricao) + "\n\t},\n"
         tipolist += novotipo    
     tipolist = tipolist[0:-2]
     tipolist += '\n}'
@@ -342,12 +342,12 @@ def downloadALL(request):
     emprestimolist = '{'
     for e in emprestimos:
         novoemprestimo = str(e.id) + ":{\n"
-        novoemprestimo += "\tdtEmprestimo :" + str(e.dtEmprestimo) + ",\n"
-        novoemprestimo += "\titem :" + "'"+ str(e.item.id) + "',\n"
-        novoemprestimo += "\tpessoa :" + "'"+ str(e.pessoa) + "',\n"
-        novoemprestimo += "\tdtDevolucao :" + str(e.dtDevolucao) + ",\n"
-        novoemprestimo += "\taberto :" + "'"+ str(e.aberto) + "',\n"
-        novoemprestimo += "\tdtCadastro :" + str(e.dtCadastro) + "\n\t},\n"
+        novoemprestimo += "\t'dtEmprestimo' :" + str(e.dtEmprestimo) + ",\n"
+        novoemprestimo += "\t'item' :" + "'"+ str(e.item.id) + "',\n"
+        novoemprestimo += "\t'pessoa' :" + "'"+ str(e.pessoa) + "',\n"
+        novoemprestimo += "\t'dtDevolucao' :" + str(e.dtDevolucao) + ",\n"
+        novoemprestimo += "\t'aberto' :" + "'"+ str(e.aberto) + "',\n"
+        novoemprestimo += "\t'dtCadastro' :" + str(e.dtCadastro) + "\n\t},\n"
         emprestimolist += novoemprestimo    
     emprestimolist = emprestimolist[0:-2]
     emprestimolist += '\n}'
@@ -362,7 +362,7 @@ def downloadALL(request):
     zf.writestr(NOME_EMPRESTIMOS, emprestimolist)
 
     response['Content-Disposition'] = f'attachment; filename={ZIPFILE_NAME}'
-    return response    
+    return response     
 
 def ari_mazer(request):
     """Página Inicial do site."""
