@@ -20,7 +20,7 @@
 
   <div class="main">
         <header>
-          <div class="banner">
+          <div class="banner text-nowrap">
             <p>&#216 r c l e !</p>
           </div>
           <div class='menu'>
@@ -28,8 +28,12 @@
           </div>
         </header>
         <div class="container"> 
-            {% block content %} {% endblock %}
+          <div class="row">
+            <div class="col-md-6">
+              {% block content %} {% endblock %}
+            </div>
             
+          </div>
         </div>
         <!-- <div class="footer">
                 <p>Copyright &copy Orcle Corporation. Todos os direitos reservados.</p>
