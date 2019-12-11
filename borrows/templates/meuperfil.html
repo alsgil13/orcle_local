@@ -8,8 +8,9 @@
 
 <div >
         <div class="container">
-                <div class="profile-info">
-                    <img class="profilepic" src="{{ foto }}">
+          <div class="row justify-content-center">
+                <div class="col-12 col-md-4">
+                    <img class="img-fluid" src="{{ foto }}">
                     <a href="/borrows/perfil/{{ id }}/update/"><input type="button" class="btn btn-primary btn-block" value="Editar Perfil"></a>
                     <a href="/borrows/download"><input class='btn btn-secondary btn-block' value="Baixar Meus Itens"></a>
                     <p class=" textoprofile text-left"><b>Nome:</b> {{ nome }}</p>
@@ -29,14 +30,17 @@
                     <a href="/borrows/perfil/{{ id }}/delete/"><input type="button" class="btn btn-danger btn-block" value="Excluir Conta"></a>
                     
                 </div>
+                <div class="col-md-2"></div>
 
-                <div class="happen">
+                <div class="col-12 col-md-4 offset-md-4">
 
                     {% for i in itens %}
-                    <div class="evento">
-                            <a href=""><div class="eventoopt"></div></a>
-                            <img class="tinypic" src="{{ i.foto.url }}">
-                            <p class="eventotext"><span>{{ i }} </span> </p>
+                    <div class="card mb-3">
+                      <img class="card-img-top" src="{{ i.foto.url }}">
+                        <div class="card-body">
+                          <h5 class="card-title">{{ i }} </h5>
+                          <p class="card-text">{{ i.descricao }} </p>
+                        </div>
                     </div>     
                     {% endfor %}
     
@@ -72,6 +76,7 @@
                     </div>      -->
     
                 </div>
+              
             </div>
 
 

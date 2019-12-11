@@ -16,16 +16,19 @@
   <ul>
     {% for e in emprestimo_list %}
       <li>
-          <div class="row item_contenedor">
-                <div class="col  item_contenedor">
+        <div class="container bg-light p-2">
+
+
+          <div class="row justify-content-center">
+                <div class="col-12 col-md-6">
                         <p class="nome_item">   {{ e.item }}</p>
                         <p class="dono_item"> 
                             Solicitado por:  {{ e.pessoa.first_name }} {{ e.pessoa.last_name }} <br>
                         </p>
                 </div>
-                <div class="col item_contenedor">
+                <div class="col-12 col-md-4">
                     {% if e.aberto == True%}
-                    <a href="/borrows/emprestimo/{{e.id}}/update"><button class="btn btn-primary float-right">
+                    <a href="/borrows/emprestimo/{{e.id}}/update"><button class="btn btn-primary btn-block">
                            {% if e.dtDevolucao == Null%} 
                             
                             Confirmar
@@ -39,15 +42,18 @@
                         </button></a>
                         {% if e.item.status == 'e'%}
                         <a href="/borrows/emprestimo/{{e.id}}/delete">
-                        <button class="btn btn-secondary float-right">Cadastrar Devolução</button>
+                        <button class="btn btn-secondary btn-block">Cadastrar Devolução</button>
                         </a>
                         {% endif %}
     
                     {% endif %}
                 </div>
 
+
           </div>
+        </div>
       </li>
+      <br>
     {% endfor %}
     
   </ul>
