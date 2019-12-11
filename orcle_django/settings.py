@@ -126,8 +126,12 @@ DATE_INPUT_FORMATS = ('%d/%m/%Y','%Y-%m-%d')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+<<<<<<< HEAD
 STATIC_ROOT = '/home/als_gil13/orcle_venv/orcle/borrows/static/'
 STATIC_URL = '/static/'
+=======
+STATIC_URL = '../static/'
+>>>>>>> 1a47ea48c5ca66eefc03c7ebe2ce1d09b8b92da2
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
