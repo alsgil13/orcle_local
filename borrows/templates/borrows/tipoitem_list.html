@@ -15,21 +15,20 @@
   <ul>
     {% for t in tipoitem_list %}
       <li>
-          <div class="row item_contenedor">
-                <div class="col ">
-                        <p class="nome_item">   {{ t.nome }}</p>
-                        <p class=""> {{ t.descricao }} 
-                        </p>
+          <div class="card">
+          <div class="card-body">
+                        <h4 class="card-title">   {{ t.nome }}</h4>
+                        <p class="card-text"> {{ t.descricao }}</p>
 
-                </div>
-                <div class="col item_contenedor">
+  
                         <a href="/borrows/tipoitem/{{t.id}}/update"><button class="btn btn-warning btn-sm">Alterar</button></a>
                         <a href="/borrows/tipoitem/{{t.id}}/delete"><button class="btn btn-danger btn-sm">Excluir</button></a>
-                </div>
-
-
+  
           </div>
+          </div>
+        
       </li>
+      <br>
     {% endfor %}
     
   </ul>

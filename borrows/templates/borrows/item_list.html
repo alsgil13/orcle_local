@@ -16,9 +16,23 @@
   <ul>
     {% for item in item_list %}
       <li>
-          <div class="row item_contenedor">
-                <div class="col  item_contenedor">
-                    <img class="item_pic" src="{{ item.foto.url }}">
+          <div class="row justify-content-center">
+
+                <div class="card mb-3 " style="width: 33rem;">
+                    <img class="card-img-top" src="{{ item.foto.url }}">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ item }}</h5>
+                        <p class="card-text">
+                            Pertence a:  {{ item.dono.first_name }} {{ item.dono.last_name }} <br>
+                        </p>
+                        <p class="card-text"><small class="text-muted">Status: <span class="{% if item.status == 'd' %}disponivel{% elif item.status == 'i' %}indisponivel{% else %}emprestado{% endif %}">{{ item.get_status_display }}</span></small></p>
+                        {% if item.status == 'd' %}
+                        <!-- <div class="col "> -->
+                          <a href="/borrows/emprestimo/create?item={{item.id}} "><button class="btn btn-primary float-right">Pedir Emprestado</button></a>
+                        <!-- </div> -->
+                        {% endif %}
+                    </div>
+                    <!-- <img class="item_pic" src="{{ item.foto.url }}">
                     <a href="/borrows/item/{{ item.id }}" >
                         <p class="nome_item">   {{ item }}</p>
                         <p class="dono_item"> 
@@ -26,17 +40,10 @@
                             Status: <span class="{% if item.status == 'd' %}disponivel{% elif item.status == 'i' %}indisponivel{% else %}emprestado{% endif %}">{{ item.get_status_display }}</span>
                         </p>
 
-                    </a>
+                    </a> -->
   
-                    <!-- <a href="/borrows/item/{{item.id}}/update"><button class="btn btn-warning">Alterar</button></a>
-                    <a href="/borrows/item/{{item.id}}/delete"><button class="btn btn-danger">Excluir</button></a> -->
                 </div>
-                {% if item.status == 'd' %}
-                <div class="col  item_contenedor">
-                  <!-- Adicionar id do item no GET -->
-                  <a href="/borrows/emprestimo/create?item={{item.id}} "><button class="btn btn-primary float-right">Pedir Emprestado</button></a>
-                </div>
-                {% endif %}
+
           </div>
       </li>
     {% endfor %}

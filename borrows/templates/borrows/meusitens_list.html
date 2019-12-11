@@ -13,21 +13,20 @@
     
   </div>
   {% if item_list %}
+  <div class="row justify-content-center">
   <ul>
     {% for item in item_list %}
-      <li>
-          <div class="row item_contenedor">
-                <div class="col  item_contenedor">
-                    <img class="item_pic" src="{{ item.foto.url }}">
-                        <p class="nome_item">   {{ item }}</p>
-                        <p class="dono_item"> 
+      <li class="">
+          <div class="card " style="width: 18rem;">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{ item.foto.url }}">
+                        <h5 class="card-title">   {{ item }}</h5>
+                        <p class="card-text"> 
                             Pertence a:  {{ item.dono.first_name }} {{ item.dono.last_name }} <br>
                             Status: <span class="{% if item.status == 'd' %}text-success{% elif item.status == 'i' %}text-danger{% else %}text-warning{% endif %}">{{ item.get_status_display }}</span>
                         </p>
-                </div>
-                <div class="col item_contenedor">
-                        <a href="/borrows/item/{{item.id}}/update"><button class="btn btn-warning">Alterar</button></a>
-                        <a href="/borrows/item/{{item.id}}/delete"><button class="btn btn-danger">Excluir</button></a>
+                        <a href="/borrows/item/{{item.id}}/update"><button class="btn btn-warning btn-block">Alterar</button></a>
+                        <a href="/borrows/item/{{item.id}}/delete"><button class="btn btn-danger btn-block">Excluir</button></a>
 
                 </div>
 
@@ -36,6 +35,7 @@
     {% endfor %}
     
   </ul>
+</div>
   {% else %}
     <p>Nenhum item disponível.</p>
   {% endif %}
