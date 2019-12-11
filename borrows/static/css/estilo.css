@@ -331,3 +331,8 @@ ul{
         align-content: center;
     }
 }
+
+
+.divPrinter{
+    border: solid;
+}
