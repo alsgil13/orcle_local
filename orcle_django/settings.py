@@ -20,8 +20,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = '%_tm6=43s@m)2m@gwf&ofn8n@l&5+-qm96e=4=wci)+2lj868('
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '%_tm6=43s@m)2m@gwf&ofn8n@l&5+-qm96e=4=wci)+2lj868(')
+SECRET_KEY = '%_tm6=43s@m)2m@gwf&ofn8n@l&5+-qm96e=4=wci)+2lj868('
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '%_tm6=43s@m)2m@gwf&ofn8n@l&5+-qm96e=4=wci)+2lj868(')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
@@ -126,6 +126,7 @@ DATE_INPUT_FORMATS = ('%d/%m/%Y','%Y-%m-%d')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+STATIC_ROOT = '/home/als_gil13/orcle_venv/orcle/borrows/static/'
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
