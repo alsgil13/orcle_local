@@ -313,3 +313,21 @@ ul{
     font-style: italic;
     
 }
+
+.visivel-pc{
+    display: block;
+}
+
+.visivel-cel{
+    display:none;
+}
+
+@media(max-width: 580px) {
+    .visivel-pc{
+        display: none;
+    }
+    .visivel-cel {
+        display: block; /* ou inline, inline-block */
+        align-content: center;
+    }
+}
